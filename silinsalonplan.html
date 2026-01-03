@@ -212,8 +212,33 @@
 
         <!-- TAB 4: ADS STRATEGY -->
         <div id="content-ads" class="hidden animate-fade-in">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8" id="ads-grid">
-                <!-- JS will populate -->
+            <div class="grid grid-cols-1 gap-8" id="ads-grid">
+                <!-- JS will populate (Modified for full width cards if needed, keeping grid for now) -->
+            </div>
+
+            <!-- Negative Keywords Section -->
+            <div class="bg-rose-50 border border-rose-200 rounded-xl p-6 mt-8">
+                <h3 class="font-bold text-rose-800 mb-4 flex items-center">
+                   <i class="fas fa-shield-alt mr-2"></i> Negative Keywords (คำต้องห้ามป้องกันงบรั่วไหล)
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div class="bg-white p-3 rounded-lg border border-rose-100 shadow-sm">
+                        <div class="font-bold text-rose-700 text-sm mb-2">หมวดเรียน/สอน</div>
+                        <p class="text-xs text-slate-600 leading-relaxed">สอน, เรียน, โรงเรียน, คอร์ส, หลักสูตร, อบรม, ฝึก, วิธี, ขั้นตอน, How to</p>
+                    </div>
+                    <div class="bg-white p-3 rounded-lg border border-rose-100 shadow-sm">
+                        <div class="font-bold text-rose-700 text-sm mb-2">หมวดทำเอง/ซื้อของ</div>
+                        <p class="text-xs text-slate-600 leading-relaxed">ทำเอง, ซื้อที่ไหน, ขาย, ขายส่ง, ราคาส่ง, อุปกรณ์, น้ำยา, ยี่ห้อไหนดี, Shopee, Lazada</p>
+                    </div>
+                    <div class="bg-white p-3 rounded-lg border border-rose-100 shadow-sm">
+                        <div class="font-bold text-rose-700 text-sm mb-2">หมวดหางาน</div>
+                        <p class="text-xs text-slate-600 leading-relaxed">สมัครงาน, รับสมัคร, หางาน, รับช่าง, ผู้ช่วย, พาร์ทไทม์</p>
+                    </div>
+                    <div class="bg-white p-3 rounded-lg border border-rose-100 shadow-sm">
+                        <div class="font-bold text-rose-700 text-sm mb-2">หมวดของถูก</div>
+                        <p class="text-xs text-slate-600 leading-relaxed">ถูกๆ, ประหยัด, ฟรี, แจก, มือสอง, 99 บาท</p>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -280,22 +305,32 @@
 
         const ads = [
             {
-                name: "แคมเปญ A: ดึงลูกค้าในพื้นที่", goal: "ลูกค้าหน้าร้าน & การจองคิว", budget: "50%", cpc: "฿6.00",
-                headline: "Silin Salon ราชพฤกษ์ | ร้านทำผมยอดนิยม ใกล้คุณ",
-                desc: "จองคิวออนไลน์ได้แล้ววันนี้ ช่างมืออาชีพ บริการระดับพรีเมียม บรรยากาศผ่อนคลาย เปิดถึง 2 ทุ่ม",
-                extensions: ["จองคิวออนไลน์", "แผนที่สาขาราชพฤกษ์", "แผนที่สาขากาญจนาฯ"]
+                name: "1. แคมเปญ: สายทำสี (Color Expert)", goal: "เน้นความ \"ตรงปก\" และ \"ผมไม่เสีย\"", budget: "30%", cpc: "฿10.00",
+                keywords: ["ร้านทำสีผม", "ทำไฮไลท์", "สีผมแฟชั่น", "ร้านทำผมแนะนำ"],
+                headline: "ทำสีผม ไฮไลท์ ตรงปก | ผมนุ่มสวย ไม่แห้งเสีย | Silin Salon กูรูเรื่องสีผม",
+                desc: "อยากได้สีไหนเราจัดให้เป๊ะ เทคนิคพิเศษถนอมแกนผม ทำแล้วผมนุ่มกว่าเดิม จองเลย. จบปัญหาทำสีแล้วผมพัง การันตีผลลัพธ์สวยตรงปก ปรึกษาช่างผู้เชี่ยวชาญฟรี",
+                extensions: ["โปรโมชั่นสีผม", "รีวิวลูกค้าจริง", "จองคิวออนไลน์"]
             },
             {
-                name: "แคมเปญ B: บริการมูลค่าสูง", goal: "ยอดขายมูลค่าสูง (฿3000+)", budget: "30%", cpc: "฿10.50",
-                headline: "เคราตินทรีตเมนต์พรีเมียม | ฟื้นฟูผมเสีย ให้เงางาม",
-                desc: "ทำสีออร์แกนิกและเคราติน ผมไม่เสีย ลาขาดผมชี้ฟู พร้อมผลิตภัณฑ์ออร์แกนิก 100% ดูแลเส้นผมคุณ",
-                extensions: ["รูป Before & After", "ผลิตภัณฑ์ออร์แกนิก", "โปรโมชั่นเคราติน"]
+                name: "2. แคมเปญ: สายกู้ผมเสีย (Keratin Rescue)", goal: "เน้นความ \"ว้าว\" ผมเงากระจก", budget: "30%", cpc: "฿12.50",
+                keywords: ["ยืดเคราติน", "แก้ผมเสีย", "ยืดวอลลุ่ม", "สปาผม"],
+                headline: "ยืดเคราติน ผมเงากระจก | กู้ผมพัง ให้เหมือนเกิดใหม่ | Silin Salon จบทุกปัญหาผม",
+                desc: "เปลี่ยนผมชี้ฟูเป็นผมสวยเรียบตรง นุ่มลื่น เงางามทันทีหลังทำ อยู่ได้นาน. นวัตกรรมเคราตินพรีเมียม ฟื้นฟูลึกถึงแกนผม สวยเป๊ะเหมือนเกิดใหม่ ดูโปรโมชั่น",
+                extensions: ["รูป Before & After", "โปรแกรมฟื้นฟู", "ปรึกษาฟรี"]
             },
             {
-                name: "แคมเปญ C: Rebranding Awareness", goal: "สร้างการรับรู้ (มหาชัย)", budget: "20%", cpc: "฿4.50",
-                headline: "Arin Salon มหาชัย (โดยทีมงาน Silin Salon)",
-                desc: "ร้านทำผมคุณภาพที่คุณไว้ใจ บริหารงานโดยทีม Silin Salon มาตรฐานระดับพรีเมียม ในราคามิตรภาพ",
-                extensions: ["แผนที่สาขามหาชัย", "โปรโมชั่นเปิดตัว", "รีวิวลูกค้า"]
+                name: "3. แคมเปญ: ร้านใกล้ฉัน (Local Confidence)", goal: "เน้นความ \"ไว้ใจได้\" ลูกค้าประจำเยอะ", budget: "25%", cpc: "฿6.50",
+                keywords: ["ร้านทำผมใกล้ฉัน", "ร้านตัดผมแถวนี้", "ร้านทำผม ราชพฤกษ์", "ร้านทำผม กาญจนาฯ"],
+                headline: "ร้านทำผมใกล้ฉัน Silin Salon | ลูกค้ากลับมาซ้ำ 98% | การันตีความสวยระดับพรีเมียม",
+                desc: "มองหาร้านทำผมคุณภาพ? มั่นใจด้วยรีวิวจริงกว่าร้อยเสียง บริการครบวงจรโดยช่างมือโปร. บรรยากาศส่วนตัว บริการเป็นกันเอง ตัด ดัด ยืด ทำสี ครบจบในที่เดียว จองคิวเลย",
+                extensions: ["แผนที่ร้าน", "รีวิว Google Maps", "เบอร์โทรศัพท์"]
+            },
+            {
+                name: "4. แคมเปญ: ดักคู่แข่ง (Competitor)", goal: "เน้นเป็น \"ทางเลือกที่ดีกว่า\"", budget: "15%", cpc: "฿8.00",
+                keywords: ["Chalachol", "Hive Salon", "Phoenix", "Rapi-rabi", "ร้านดังในพื้นที่"],
+                headline: "มองหาร้านทำผมคุณภาพ? | ลอง Silin Salon ไหม | บริการดี ระดับพรีเมียม",
+                desc: "อีกหนึ่งทางเลือกที่คุณต้องประทับใจ ช่างใส่ใจทุกรายละเอียด ราคาคุ้มค่า ดูรีวิวเลย. ไม่ต้องรอนาน ดูแลทั่วถึง ผลิตภัณฑ์นำเข้าเกรด A พร้อมโปรโมชั่นพิเศษสำหรับลูกค้าใหม่",
+                extensions: ["เปรียบเทียบราคา", "โปรลูกค้าใหม่", "จองคิว"]
             }
         ];
 
@@ -387,16 +422,24 @@
         const adsContainer = document.getElementById('ads-grid');
         ads.forEach(ad => {
             const extBadges = ad.extensions.map(ext => `<span class="text-[#1a0dab] text-xs hover:underline cursor-pointer border-r border-slate-300 pr-2 last:border-0">${ext}</span>`).join('');
+            
+            // Logic to split headlines for display
+            const headlines = ad.headline.split('|').map(h => h.trim());
+            const displayHeadline = headlines.join(' | ');
+
             adsContainer.innerHTML += `
                 <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden flex flex-col h-full">
                     <div class="p-6 border-b border-slate-100 bg-slate-50/50">
-                        <div class="flex justify-between items-start mb-2">
+                        <div class="flex flex-wrap justify-between items-start mb-2 gap-2">
                             <div class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-xs font-bold uppercase tracking-wide">
                                 ${ad.name}
                             </div>
                         </div>
                         <div class="text-slate-600 text-sm mt-2">
                             <strong>เป้าหมาย:</strong> ${ad.goal}
+                        </div>
+                         <div class="mt-2 text-xs text-slate-500">
+                           <span class="font-semibold">Keywords:</span> ${ad.keywords.join(", ")}
                         </div>
                     </div>
                     <div class="p-6 flex-1 space-y-6">
@@ -409,8 +452,8 @@
                                     <div class="font-bold text-slate-900 text-sm">Ad</div>
                                     <div class="text-slate-600 text-xs">· www.silinsalon.com</div>
                                 </div>
-                                <div class="text-[#1a0dab] text-xl hover:underline cursor-pointer font-medium mb-1 truncate">
-                                    ${ad.headline}
+                                <div class="text-[#1a0dab] text-xl hover:underline cursor-pointer font-medium mb-1 line-clamp-2">
+                                    ${displayHeadline}
                                 </div>
                                 <div class="text-[#4d5156] text-sm leading-relaxed mb-2">
                                     ${ad.desc}
